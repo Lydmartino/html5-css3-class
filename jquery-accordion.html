@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <title>jquery accordion</title>
+
+<style>
+    .container {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .reminder-text {
+        display: none;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>jquery accordion</h1>
+
+
+    <div class="container">
+        <p class="intro">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare tincidunt gravida. Donec porttitor magna nulla,
+          eget euismod nisl dignissim at. 
+        </p>
+    
+        <p class="remainder-text">
+          Vestibulum pretium lectus et suscipit auctor. Integer sed commodo nunc. Phasellus ac sapien risus. Duis volutpat lacinia
+          neque, ut egestas dui rhoncus ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+          egestas.
+        </p>
+    
+        <button type="button" class="toggle-button">show more</button>
+      </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+      $('.toggle-button').on('click', function(){
+        const buttonText = $(this).text().toLowerCase();
+
+        $(this).prev('.remainder-text').slideToggle();
+        $(this).text(buttonText === 'show more' ? 'show less' : 'show more');
+      });
+    });
+  </script>
+  
+</body>
+</html>
